@@ -9,6 +9,46 @@
    </INCLUDES>
    <FUNCTIONS>
     <item>
+     <FUNCNAME>Z_API_GET_STOCK_LIST</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>Get Stock List API</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_MATNR</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>ZBK_STOCK-MATNR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_WH_ID</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>ZBK_STOCK-WH_ID</TYP>
+      </RSIMP>
+     </IMPORT>
+     <TABLES>
+      <RSTBL>
+       <PARAMETER>ET_STOCK</PARAMETER>
+       <DBSTRUCT>ZBK_STOCK</DBSTRUCT>
+      </RSTBL>
+     </TABLES>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_MATNR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Material Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_WH_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Warehouse Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ET_STOCK</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Stock List</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
      <FUNCNAME>Z_GET_STOCK_LIST2</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
      <SHORT_TEXT>Get Stock List</SHORT_TEXT>
