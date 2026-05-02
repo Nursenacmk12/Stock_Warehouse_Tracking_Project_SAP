@@ -49,6 +49,81 @@
      </DOCUMENTATION>
     </item>
     <item>
+     <FUNCNAME>Z_CREATE_PRODUCT</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT> Create Product</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_MATNR</PARAMETER>
+       <TYP>ZBK_MATERIALS-MATNR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_MATNAME</PARAMETER>
+       <TYP>ZBK_MATERIALS-MATNAME</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_UNIT</PARAMETER>
+       <TYP>ZBK_MATERIALS-UNIT</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_CATEGORY</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHAR40</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_SUCCESS</PARAMETER>
+       <TYP>BOOLE_D</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EV_DOC_NO</PARAMETER>
+       <TYP>CHAR20</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EV_MESSAGE</PARAMETER>
+       <TYP>CHAR255</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_MATNR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Material Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_MATNAME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Material Name</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_UNIT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Unite</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_CATEGORY</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Character field of length 40</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_SUCCESS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Data element for domain BOOLE: TRUE (=&apos;X&apos;) and FALSE (=&apos; &apos;)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_DOC_NO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Char 20</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_MESSAGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Char255</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
      <FUNCNAME>Z_GET_STOCK_DETAIL</FUNCNAME>
      <SHORT_TEXT>Get Stock Detail</SHORT_TEXT>
      <IMPORT>
