@@ -281,6 +281,80 @@
       </RSFDO>
      </DOCUMENTATION>
     </item>
+    <item>
+     <FUNCNAME>Z_STOCK_OUT</FUNCNAME>
+     <SHORT_TEXT>Belirli bir ürünün belirli bir depodaki stok miktarını azaltmak</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_MATNR</PARAMETER>
+       <TYP>ZBK_STOCK-MATNR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_WH_ID</PARAMETER>
+       <TYP>ZBK_STOCK-WH_ID</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_QUANTITY</PARAMETER>
+       <TYP>ZBK_STOCK-QUANTITY</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_REF_NO</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>CHAR20</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_SUCCESS</PARAMETER>
+       <TYP>BOOLE_D</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EV_DOC_NO</PARAMETER>
+       <TYP>CHAR20</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EV_ERROR</PARAMETER>
+       <TYP>CHAR255</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_MATNR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Material Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_WH_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Warehouse Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_QUANTITY</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Stock Quantity</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_REF_NO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Char 20</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_SUCCESS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Data element for domain BOOLE: TRUE (=&apos;X&apos;) and FALSE (=&apos; &apos;)</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_DOC_NO</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Char 20</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_ERROR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Char255</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
    </FUNCTIONS>
   </asx:values>
  </asx:abap>
