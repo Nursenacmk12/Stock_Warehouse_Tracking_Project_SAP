@@ -49,6 +49,54 @@
      </DOCUMENTATION>
     </item>
     <item>
+     <FUNCNAME>Z_GET_STOCK_DETAIL</FUNCNAME>
+     <SHORT_TEXT>Get Stock Detail</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_MATNR</PARAMETER>
+       <TYP>ZBK_STOCK-MATNR</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>IV_WH_ID</PARAMETER>
+       <TYP>ZBK_STOCK-WH_ID</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>ES_STOCK</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>ZBK_STOCK</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>EV_FOUND</PARAMETER>
+       <REFERENCE>X</REFERENCE>
+       <TYP>BOOLE_D</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_MATNR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Material Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>IV_WH_ID</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Warehouse Code</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>ES_STOCK</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Stock Table</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_FOUND</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Data element for domain BOOLE: TRUE (=&apos;X&apos;) and FALSE (=&apos; &apos;)</STEXT>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+    <item>
      <FUNCNAME>Z_GET_STOCK_LIST2</FUNCNAME>
      <REMOTE_CALL>R</REMOTE_CALL>
      <SHORT_TEXT>Get Stock List</SHORT_TEXT>
