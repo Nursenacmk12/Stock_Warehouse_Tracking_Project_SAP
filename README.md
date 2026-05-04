@@ -56,3 +56,27 @@ MATNR       → Ürün kodu
 MATNAME     → Ürün adı
 UNIT        → Birim
 CREATED_AT  → Oluşturma tarihi
+
+## 📊 1. Tablolar (Data Layer)
+
+### 🔹 `ZBK_MATERIALS`
+
+Bu tablo, sistemde tanımlı olan **ürün (malzeme) ana verilerini** tutar.  
+Stok yönetimi yapılabilmesi için sistemdeki tüm ürünler bu tabloda kayıtlı olmalıdır.
+
+#### 📌 Amaç
+
+- Ürün bilgilerini merkezi olarak saklamak  
+- Stok işlemlerinde kullanılacak ürün referansını oluşturmak  
+- Diğer tablolar (özellikle `ZBK_STOCK`) ile ilişki kurmak  
+
+#### 🧠 Kullanım Senaryosu
+
+- Yeni ürün oluşturulurken (`Z_CREATE_PRODUCT`) bu tabloya kayıt eklenir  
+- Stok işlemlerinde (`Z_STOCK_IN`, `Z_STOCK_OUT`, `Z_TRANSFER_STOCK`) ürün doğrulaması için kullanılır  
+- Raporlama ve listeleme işlemlerinde ürün adı bilgisi buradan alınır  
+
+👨‍💻 Geliştiriciler
+Ahmet Seyyit Köse
+Nursena Çamkömürü
+
