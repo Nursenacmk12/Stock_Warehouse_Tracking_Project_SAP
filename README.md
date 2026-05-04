@@ -1,173 +1,58 @@
-# Stock_Warehouse_Tracking_Project_SAP
+<h1 align="center">📦 Stock Warehouse Tracking Project SAP</h1>
+<h3 align="center">SAP ABAP ile Geliştirilmiş Stok ve Depo Yönetim Sistemi</h3>
 
-# 📦 SAP ABAP - Stock & Warehouse Management
+<p align="center">
+  SAP ABAP kullanılarak geliştirilen, stok yönetimi, depo takibi ve depolar arası transfer süreçlerini yöneten backend odaklı proje.
+</p>
 
-Bu proje, SAP ABAP kullanılarak geliştirilmiş **stok ve depo yönetim sistemi (SAP backend)** uygulamasıdır.
-Amaç, SAP içerisinde stok verisini yönetmek ve bu veriyi function module’lar aracılığıyla dış sistemlere açılabilir hale getirmektir.
+<p align="center">
+  <img src="https://img.shields.io/badge/SAP-ABAP-0FAAFF?style=for-the-badge&logo=sap&logoColor=white" />
+  <img src="https://img.shields.io/badge/SAP%20NetWeaver-7.52-0FAAFF?style=for-the-badge&logo=sap&logoColor=white" />
+  <img src="https://img.shields.io/badge/RFC-Remote%20Function%20Modules-4CAF50?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/abapGit-Version%20Control-F05032?style=for-the-badge&logo=git&logoColor=white" />
+  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" />
+</p>
+
 ---
-## 🎯 Proje Amacı
+
+## 🎯 Proje Hakkında
+
+Bu proje, **SAP ABAP** kullanılarak geliştirilmiş bir **stok ve depo yönetim sistemi (SAP backend)** uygulamasıdır.  
+Amaç, SAP içerisinde stok verilerini yönetmek ve bu verileri **Function Module** yapıları aracılığıyla dış sistemlere açılabilir hale getirmektir.
+
+Sistem sayesinde ürünler, depolar ve stok hareketleri merkezi olarak yönetilebilir. Ayrıca depolar arası stok transferi gibi temel lojistik işlemler de desteklenmektedir.
+
+---
+
+## ✨ Proje Amacı
 
 Bu sistem ile:
 
-* Ürün (malzeme) yönetimi yapılır
-* Depo yönetimi yapılır
-* Stok miktarları takip edilir
-* Depolar arası stok transferi gerçekleştirilir
+- 📦 Ürün (malzeme) yönetimi yapılır
+- 🏬 Depo yönetimi gerçekleştirilir
+- 📊 Stok miktarları takip edilir
+- 🔄 Depolar arası stok transferi yapılır
+- 🌐 SAP içindeki veriler dış sistemlere açılabilir hale getirilir
+
 ---
+
 ## 🏗️ Sistem Yapısı
 
-Proje 3 ana bölümden oluşur:
+Proje 3 ana bölümden oluşmaktadır:
+
+1. **Tablolar (Data Layer)**
+2. **ABAP Programları**
+3. **Function Modules (API Layer)**
+
 ---
-### 📊 1. Tablolar (Data Layer)
 
-#### 🔹 `ZBK_MATERIALS`
+## 📊 1. Tablolar (Data Layer)
 
+### 🔹 `ZBK_MATERIALS`
 Ürün bilgilerini tutar.
+
 ```text
 MATNR       → Ürün kodu
 MATNAME     → Ürün adı
 UNIT        → Birim
 CREATED_AT  → Oluşturma tarihi
-```
----
-#### 🔹 `ZBK_WAREHOUSES`
-
-Depo bilgilerini tutar.
-
-```text
-WH_ID       → Depo kodu
-WH_NAME     → Depo adı
-LOCATION    → Lokasyon
-CREATED_AT  → Oluşturma tarihi
-```
----
-#### 🔹 `ZBK_STOCK`
-Stok miktarını tutar.
-
-```text
-MATNR       → Ürün kodu
-WH_ID       → Depo kodu
-QUANTITY    → Stok miktarı
-UPDATE_AT   → Güncelleme tarihi
-```
----
-### ⚙️ 2. ABAP Programları
-
-#### 🔹 `ZADD_MATERIAL`
-
-Yeni ürün ekler.
-
-#### 🔹 `ZADD_WAREHOUSE`
-
-Yeni depo ekler.
-
-#### 🔹 `ZADD_STOCK`
-
-Stok kaydı oluşturur.
-
-#### 🔹 `ZLIST_STOCK`
-
-Stokları listeler.
-
----
-
-### 🌐 3. Function Modules (API Layer)
-
-Tüm function module’lar aşağıdaki function group altında toplanmıştır:
-
-```text
-ZFG_STOCK_API
-```
----
-
-#### 🔹 `Z_API_GET_STOCK_LIST`
-
-Stok listesini getirir (filtre destekli)
-
----
-
-#### 🔹 `Z_GET_WAREHOUSE_LIST`
-
-Tüm depoları listeler
----
-#### 🔹 `Z_GET_STOCK_DETAIL`
-Tek ürün + depo için stok detayını getirir---
-
-#### 🔹 `Z_CREATE_PRODUCT`
-Yeni ürün oluşturur
----
-#### 🔹 `Z_STOCK_IN`
-Stok girişi yapar
----
-#### 🔹 `Z_STOCK_OUT`
-
-Stok çıkışı yapar
-
----
-
-#### 🔹 `Z_TRANSFER_STOCK`
-
-Depolar arası stok transferi yapar
-
----
-
-## 🧠 İş Mantığı
-
-### ➕ Stok Girişi
-
-* Mevcut kayıt varsa artırılır
-* Yoksa yeni kayıt oluşturulur
-
----
-
-### ➖ Stok Çıkışı
-
-* Yeterli stok varsa düşülür
-* Yetersizse işlem iptal edilir
-
----
-
-### 🔄 Stok Transferi
-
-* Kaynak depodan düşülür
-* Hedef depoya eklenir
-
----
-
-## 📁 Proje Yapısı (abapGit)
-
-```text
-src/
- ├── tbl_materials
- ├── zbk_tblwarehouses
- ├── zbk_tblstock
- ├── zbk_add_material
- ├── zbk_add_warehouse
- ├── zbk_add_stock
- ├── zbk_list_stock
- └── zfg_stockapi
-```
-
----
-
-## 🛠️ Kullanılan Teknolojiler
-
-* SAP NetWeaver AS ABAP 7.52
-* ABAP
-* RFC (Remote Function Modules)
-* abapGit
-
----
-
-## 📌 Notlar
-
-* Tüm function module’lar **Remote-Enabled Module** olarak tanımlanmıştır
-* Sistem, dış backend sistemlere veri sağlamak için uygundur
-* SAP içinde tamamen bağımsız çalışabilir
-
----
-
-## 👨‍💻 Geliştiriciler
-
-Ahmet Seyyit Köse
-Nursena Çamkömürü
